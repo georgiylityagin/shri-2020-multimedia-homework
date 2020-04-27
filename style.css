@@ -3,30 +3,164 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #495057;
+}
+
 button {
-  padding: 10px 20px;
+  padding: 15px 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons button {
+  margin-right: 5px;
 }
 
 .videos-grid {
-  margin-top: 20px;
+  margin-top: 10px;
   display: grid;
-  gap: 20px;
+  gap: 10px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-}
-
-.video {
-  width: 100%;
-  height: 40vh;
-  transition: 2s ease-in-out;
-  background-color: #fff;
+  align-content: start;
+  height: 80vh;
   position: relative;
 }
 
+.video {
+  margin: auto;
+  width: auto;
+  height: 300px;
+  transition: 0.3s ease-in-out;
+  background-color: #fff;
+}
+
 .fullscreen {
-  /* position: absolute; */
+  position: absolute;
   width: 100%;
-  height: 80vh;
+  height: 100%;
   z-index: 1;
 }
 
+
+.control-panel {
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  border-top: solid 2px #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.ranges-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 1.4rem;
+  padding: 0;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(47, 164, 231, 0.25);
+}
+
+input[type="range"]:focus::-ms-thumb {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(47, 164, 231, 0.25);
+}
+
+input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 1rem;
+  height: 1rem;
+  margin-top: -0.25rem;
+  background-color: #2FA4E7;
+  border: 0;
+  border-radius: 1rem;
+  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -webkit-appearance: none;
+          appearance: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(47, 164, 231, 0.25);
+          box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(47, 164, 231, 0.25);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  background-color: #cfeaf9;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.5rem;
+  color: transparent;
+  cursor: pointer;
+  background-color: #dee2e6;
+  border-color: transparent;
+  border-radius: 1rem;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  background-color: #2FA4E7;
+  border: 0;
+  border-radius: 1rem;
+  -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  -moz-appearance: none;
+       appearance: none;
+}
+
+.btn {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#54b4eb), color-stop(60%, #2FA4E7), to(#1d9ce5));
+  background-image: linear-gradient(#54b4eb, #2FA4E7 60%, #1d9ce5);
+  background-repeat: no-repeat;
+  color: #fff;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.volume-bar {
+  position: relative;
+  width: 200px;
+  align-self: stretch;
+}
+
+.volume {
+  width: 20%;
+  background-color: #2FA4E7;
+  display: inline-block;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+}
